@@ -1,7 +1,8 @@
 {
-  "name": "jane-recursos-pedagogicos",
+  "name": "resjane",
   "version": "1.0.0",
   "private": true,
+  "description": "Site de recursos pedagógicos da Jane Ferreira",
   "scripts": {
     "dev": "next dev -p 3001",
     "build": "next build",
