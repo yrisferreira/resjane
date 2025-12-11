@@ -13,15 +13,26 @@ export default function Home() {
         <h1 className="text-4xl md:text-5xl font-bold mb-4">
           Recursos Pedagógicos para Transformar sua Sala de Aula
         </h1>
-        <p className="text-xl mb-6">
-          Materiais educacionais criativos e de alta qualidade
+        <p className="text-xl mb-4">
+          Materiais educacionais criativos e de alta qualidade criados por
         </p>
-        <Link
-          href="/produtos"
-          className="inline-block bg-white text-primary-600 px-8 py-3 rounded-lg font-semibold hover:bg-gray-100 transition"
-        >
-          Ver Todos os Produtos
-        </Link>
+        <p className="text-3xl md:text-4xl font-extrabold mb-6">
+          <span className="bg-white bg-clip-text text-transparent">Jane Ferreira</span>
+        </p>
+        <div className="flex flex-col sm:flex-row gap-4 justify-center">
+          <Link
+            href="/produtos"
+            className="inline-block bg-white text-primary-600 px-8 py-3 rounded-lg font-semibold hover:bg-gray-100 transition"
+          >
+            Ver Todos os Produtos
+          </Link>
+          <Link
+            href="/sobre"
+            className="inline-block bg-white/20 backdrop-blur-sm text-white border-2 border-white px-8 py-3 rounded-lg font-semibold hover:bg-white/30 transition"
+          >
+            Conheça a Jane
+          </Link>
+        </div>
       </section>
 
       {/* Produtos em Destaque */}

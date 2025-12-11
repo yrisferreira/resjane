@@ -15,6 +15,11 @@ export default function Footer() {
                 </Link>
               </li>
               <li>
+                <Link href="/sobre" className="hover:text-primary-400 transition">
+                  Sobre
+                </Link>
+              </li>
+              <li>
                 <Link href="/produtos" className="hover:text-primary-400 transition">
                   Todos os Produtos
                 </Link>

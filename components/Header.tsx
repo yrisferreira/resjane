@@ -11,13 +11,19 @@ export default function Header() {
     <header className="bg-white shadow-md sticky top-0 z-50">
       <div className="container mx-auto px-4">
         <div className="flex items-center justify-between py-4">
-          <Link href="/" className="text-2xl font-bold text-primary-600">
-            Jane Recursos
+          <Link href="/" className="text-3xl md:text-4xl font-extrabold">
+            <span className="bg-gradient-to-r from-pink-500 via-purple-500 to-primary-600 bg-clip-text text-transparent">
+              Jane
+            </span>
+            <span className="text-gray-700"> Recursos</span>
           </Link>
 
           <nav className="hidden md:flex items-center space-x-6">
             <Link href="/" className="hover:text-primary-600 transition">
               Início
+            </Link>
+            <Link href="/sobre" className="hover:text-primary-600 transition">
+              Sobre
             </Link>
             <Link href="/produtos" className="hover:text-primary-600 transition">
               Todos os Produtos
@@ -62,6 +68,9 @@ export default function Header() {
           <div className="flex flex-col space-y-2">
             <Link href="/" className="hover:text-primary-600 transition">
               Início
+            </Link>
+            <Link href="/sobre" className="hover:text-primary-600 transition">
+              Sobre
             </Link>
             <Link href="/produtos" className="hover:text-primary-600 transition">
               Todos os Produtos

@@ -7,8 +7,8 @@ import Footer from '@/components/Footer';
 const inter = Inter({ subsets: ['latin'] });
 
 export const metadata: Metadata = {
-  title: 'Jane Recursos Pedagógicos',
-  description: 'Recursos pedagógicos e materiais educacionais para professores',
+  title: 'Jane Recursos Pedagógicos - Jane Ferreira',
+  description: 'Recursos pedagógicos criados por Jane Ferreira, Pedagoga especialista em Educação Especial, Inclusiva e Psicopedagogia',
 };
 
 export default function RootLayout({
