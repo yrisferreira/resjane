@@ -81,10 +81,6 @@ export default function Footer() {
                 <Award className="w-4 h-4 text-amber-400" />
                 <span>Consultoria Pedagógica</span>
               </li>
-              <li className="flex items-center space-x-2 text-slate-300">
-                <BookOpen className="w-4 h-4 text-purple-400" />
-                <span>Cursos Online</span>
-              </li>
             </ul>
           </div>
 
