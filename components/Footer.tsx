@@ -24,7 +24,7 @@ export default function Footer() {
             </p>
             
             <div className="flex items-center space-x-4">
-              <a href="#" className="w-10 h-10 bg-slate-700 rounded-lg flex items-center justify-center hover:bg-slate-600 transition-colors">
+              <a href="https://www.instagram.com/jane.psicoeducar/" target="_blank" rel="noopener noreferrer" className="w-10 h-10 bg-slate-700 rounded-lg flex items-center justify-center hover:bg-pink-600 transition-colors">
                 <Instagram className="w-5 h-5" />
               </a>
               <a href="#" className="w-10 h-10 bg-slate-700 rounded-lg flex items-center justify-center hover:bg-slate-600 transition-colors">
@@ -111,7 +111,9 @@ export default function Footer() {
                 </div>
                 <div>
                   <p className="text-slate-300 text-sm">WhatsApp</p>
-                  <p className="text-white font-medium">(11) 98765-4321</p>
+                  <a href="https://wa.me/5511945071828" target="_blank" rel="noopener noreferrer" className="text-white font-medium hover:text-green-400 transition-colors">
+                    +55 11 94507-1828
+                  </a>
                 </div>
               </div>
               

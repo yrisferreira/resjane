@@ -227,7 +227,9 @@ export default function Header() {
               <div className="px-4 pt-4 border-t border-slate-100">
                 <div className="flex items-center justify-center space-x-2 text-sm text-slate-500">
                   <Phone className="w-4 h-4" />
-                  <span>Suporte: (11) 98765-4321</span>
+                  <a href="https://wa.me/5511945071828" target="_blank" rel="noopener noreferrer" className="hover:text-green-400 transition-colors">
+                    WhatsApp: +55 11 94507-1828
+                  </a>
                 </div>
               </div>
             </div>

@@ -88,7 +88,9 @@ export default function ContatoPage() {
                 </div>
                 <div>
                   <h3 className="font-semibold text-gray-800 mb-1">WhatsApp</h3>
-                  <p className="text-gray-600">(11) 98765-4321</p>
+                  <a href="https://wa.me/5511945071828" target="_blank" rel="noopener noreferrer" className="text-gray-600 hover:text-green-600 transition-colors">
+                    +55 11 94507-1828
+                  </a>
                   <p className="text-sm text-gray-500">Seg-Sex, 9h-18h</p>
                 </div>
               </div>
@@ -112,7 +114,7 @@ export default function ContatoPage() {
                 Receba dicas, novidades e conteúdos exclusivos sobre educação inclusiva!
               </p>
               <div className="flex flex-wrap gap-4">
-                <a href="#" className="bg-white/20 backdrop-blur-sm px-4 py-2 rounded-lg hover:bg-white/30 transition">
+                <a href="https://www.instagram.com/jane.psicoeducar/" target="_blank" rel="noopener noreferrer" className="bg-white/20 backdrop-blur-sm px-4 py-2 rounded-lg hover:bg-white/30 transition">
                   Instagram
                 </a>
                 <a href="#" className="bg-white/20 backdrop-blur-sm px-4 py-2 rounded-lg hover:bg-white/30 transition">
