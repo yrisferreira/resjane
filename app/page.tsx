@@ -1,76 +1,140 @@
 import ProductCard from '@/components/ProductCard';
 import { products } from '@/data/products';
 import Link from 'next/link';
-import { ArrowRight, Star, BookOpen, Users, Sparkles } from 'lucide-react';
+import { ArrowRight, Star, BookOpen, Users, Award, CheckCircle, TrendingUp, Shield, Zap } from 'lucide-react';
 
 export default function Home() {
   const featuredProducts = products.filter(p => p.featured).slice(0, 4);
   const newProducts = products.filter(p => p.new).slice(0, 4);
 
+  const testimonials = [
+    {
+      name: "Maria Silva",
+      role: "Professora Educação Infantil",
+      content: "Os recursos da Jane transformaram minhas aulas. As crianças amam as atividades e eu economizo tempo de preparação.",
+      rating: 5,
+      avatar: "MS"
+    },
+    {
+      name: "João Santos",
+      role: "Pedagogo Escolar",
+      content: "Material de altíssima qualidade, fundamentado pedagogicamente. Recomendo a todos os colegas.",
+      rating: 5,
+      avatar: "JS"
+    },
+    {
+      name: "Ana Costa",
+      role: "Coordenadora Pedagógica",
+      content: "O Clubinho Jane revolucionou nossa escola. Acesso ilimitado a materiais excepcionais.",
+      rating: 5,
+      avatar: "AC"
+    }
+  ];
+
+  const stats = [
+    { value: "2000+", label: "Educadores Ativos", icon: Users },
+    { value: "50+", label: "Recursos Premium", icon: BookOpen },
+    { value: "4.9/5", label: "Avaliação Média", icon: Star },
+    { value: "98%", label: "Satisfação", icon: TrendingUp }
+  ];
+
   return (
-    <div className="space-y-16">
-      {/* Hero Section */}
-      <section className="relative overflow-hidden bg-gradient-to-br from-indigo-50 via-white to-purple-50 rounded-3xl">
-        <div className="container mx-auto px-4 py-16 lg:py-24">
-          <div className="grid lg:grid-cols-2 gap-12 items-center">
+    <div className="space-y-0">
+      {/* Hero Section - Premium */}
+      <section className="relative overflow-hidden bg-gradient-to-br from-slate-50 via-white to-slate-100">
+        <div className="container mx-auto px-4 py-24 lg:py-32 relative">
+          <div className="grid lg:grid-cols-2 gap-16 items-center">
             <div className="space-y-8 animate-slide-up">
-              <div className="inline-flex items-center px-3 py-1 rounded-full bg-indigo-100 text-indigo-700 text-sm font-medium">
-                <Sparkles className="w-4 h-4 mr-2" />
-                Recursos Pedagógicos Premium
+              <div className="inline-flex items-center space-x-2 px-4 py-2 rounded-full bg-slate-100 border border-slate-200">
+                <div className="w-2 h-2 bg-green-500 rounded-full animate-pulse"></div>
+                <span className="text-sm font-semibold text-slate-700">Plataforma Confiança de Milhares de Educadores</span>
               </div>
               
-              <h1 className="heading-1 text-balance">
-                Transforme sua 
-                <span className="text-transparent bg-clip-text bg-gradient-to-r from-indigo-600 to-purple-600"> Sala de Aula</span>
-                <br />com Materiais Excepcionais
+              <h1 className="heading-1">
+                Recursos Pedagógicos
+                <span className="block text-transparent bg-clip-text bg-gradient-to-r from-slate-900 to-slate-600">De Excelência</span>
+                <span className="block text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-indigo-600">Para Educação Transformadora</span>
               </h1>
               
-              <p className="text-body text-lg">
-                Recursos educacionais criados por Jane Ferreira, pedagoga especialista em Educação Especial, 
-                Inclusiva e Psicopedagogia. Materiais que fazem a diferença no aprendizado.
+              <p className="text-body text-lg leading-relaxed">
+                Materiais educacionais desenvolvidos por <strong>Jane Ferreira</strong>, especialista em 
+                Educação Especial, Inclusiva e Psicopedagogia. Transforme sua prática pedagógica 
+                com recursos validados por mais de 2000 educadores.
               </p>
               
               <div className="flex flex-col sm:flex-row gap-4">
                 <Link 
                   href="/produtos" 
-                  className="btn-primary group"
+                  className="btn-primary"
                 >
-                  Explorar Produtos
-                  <ArrowRight className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" />
+                  <Zap className="w-5 h-5" />
+                  Explorar Catálogo Premium
+                  <ArrowRight className="w-5 h-5" />
                 </Link>
                 <Link 
                   href="/sobre" 
                   className="btn-secondary"
                 >
-                  Conheça a Jane
+                  <Award className="w-5 h-5" />
+                  Conhecer Especialista
                 </Link>
               </div>
               
-              <div className="flex items-center gap-6 text-sm text-neutral-600">
-                <div className="flex items-center gap-2">
-                  <Star className="w-4 h-4 text-yellow-500 fill-current" />
-                  <span>4.9/5 Avaliação</span>
-                </div>
-                <div className="flex items-center gap-2">
-                  <Users className="w-4 h-4 text-indigo-600" />
-                  <span>2000+ Educadores</span>
-                </div>
-                <div className="flex items-center gap-2">
-                  <BookOpen className="w-4 h-4 text-purple-600" />
-                  <span>50+ Recursos</span>
-                </div>
+              <div className="grid grid-cols-2 gap-6 pt-8">
+                {stats.slice(0, 4).map((stat, index) => (
+                  <div key={index} className="flex items-center space-x-3">
+                    <div className="w-12 h-12 bg-gradient-to-br from-blue-50 to-indigo-100 rounded-xl flex items-center justify-center">
+                      <stat.icon className="w-6 h-6 text-blue-600" />
+                    </div>
+                    <div>
+                      <p className="text-2xl font-bold text-slate-900">{stat.value}</p>
+                      <p className="text-sm text-slate-600">{stat.label}</p>
+                    </div>
+                  </div>
+                ))}
               </div>
             </div>
             
             <div className="relative animate-scale-in">
-              <div className="relative bg-gradient-to-br from-indigo-100 to-purple-100 rounded-2xl p-8 h-96 flex items-center justify-center">
-                <div className="absolute inset-0 bg-gradient-to-br from-indigo-500/10 to-purple-500/10 rounded-2xl"></div>
-                <div className="relative text-center">
-                  <div className="w-24 h-24 bg-gradient-to-br from-indigo-500 to-purple-600 rounded-2xl flex items-center justify-center mx-auto mb-4 shadow-xl">
-                    <BookOpen className="w-12 h-12 text-white" />
+              <div className="relative bg-gradient-to-br from-slate-100 to-slate-200 rounded-3xl p-8 h-[500px] flex items-center justify-center shadow-2xl">
+                <div className="absolute inset-0 bg-gradient-to-br from-blue-500/5 to-indigo-500/5 rounded-3xl"></div>
+                
+                {/* Premium Badge */}
+                <div className="absolute top-6 right-6">
+                  <div className="flex items-center space-x-2 px-3 py-1 bg-gradient-to-r from-amber-500 to-amber-600 text-white rounded-full text-xs font-bold shadow-lg">
+                    <Shield className="w-3 h-3" />
+                    PREMIUM
                   </div>
-                  <h3 className="text-2xl font-bold text-neutral-900 mb-2">Jane Ferreira</h3>
-                  <p className="text-neutral-600">Pedagoga Especialista</p>
+                </div>
+                
+                <div className="relative text-center space-y-6">
+                  <div className="w-32 h-32 bg-gradient-to-br from-blue-600 to-indigo-700 rounded-3xl flex items-center justify-center mx-auto shadow-2xl">
+                    <div className="w-16 h-16 bg-white/20 backdrop-blur-sm rounded-2xl flex items-center justify-center">
+                      <BookOpen className="w-8 h-8 text-white" />
+                    </div>
+                  </div>
+                  
+                  <div className="space-y-3">
+                    <h3 className="text-3xl font-bold text-slate-900">Jane Ferreira</h3>
+                    <p className="text-slate-600 font-medium">Pedagoga Especialista</p>
+                    <div className="flex items-center justify-center space-x-1">
+                      {[...Array(5)].map((_, i) => (
+                        <Star key={i} className="w-4 h-4 text-amber-400 fill-current" />
+                      ))}
+                      <span className="text-sm text-slate-600 ml-2">4.9/5</span>
+                    </div>
+                  </div>
+                  
+                  <div className="flex items-center justify-center space-x-4 text-sm text-slate-600">
+                    <div className="flex items-center space-x-1">
+                      <CheckCircle className="w-4 h-4 text-green-500" />
+                      <span>Educação Especial</span>
+                    </div>
+                    <div className="flex items-center space-x-1">
+                      <CheckCircle className="w-4 h-4 text-green-500" />
+                      <span>Psicopedagogia</span>
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
@@ -78,120 +142,169 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Featured Products */}
-      <section className="space-y-8">
-        <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
-          <div>
-            <h2 className="heading-2">Produtos em Destaque</h2>
-            <p className="text-body mt-2">Materiais mais populares entre educadores</p>
-          </div>
-          <Link 
-            href="/produtos" 
-            className="inline-flex items-center text-indigo-600 hover:text-indigo-700 font-medium transition-colors"
-          >
-            Ver todos os produtos
-            <ArrowRight className="w-4 h-4 ml-1" />
-          </Link>
-        </div>
-        
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-          {featuredProducts.map((product, index) => (
-            <div key={product.id} className="animate-fade-in" style={{ animationDelay: `${index * 100}ms` }}>
-              <ProductCard product={product} />
-            </div>
-          ))}
-        </div>
-      </section>
-
-      {/* Features Section */}
-      <section className="bg-gradient-to-r from-indigo-50 to-purple-50 rounded-3xl p-8 lg:p-16">
-        <div className="text-center mb-12">
-          <h2 className="heading-2 mb-4">Por que escolher nossos recursos?</h2>
-          <p className="text-body max-w-2xl mx-auto">
-            Materiais desenvolvidos com base em pesquisas educacionais e experiência prática 
-            para garantir o melhor resultado em sala de aula.
-          </p>
-        </div>
-        
-        <div className="grid md:grid-cols-3 gap-8">
-          <div className="text-center space-y-4">
-            <div className="w-16 h-16 bg-indigo-100 rounded-2xl flex items-center justify-center mx-auto">
-              <BookOpen className="w-8 h-8 text-indigo-600" />
-            </div>
-            <h3 className="heading-3">Conteúdo de Qualidade</h3>
-            <p className="text-body">
-              Materiais elaborados por especialistas com anos de experiência em educação inclusiva.
+      {/* Trust Indicators */}
+      <section className="py-16 bg-white border-y border-slate-200">
+        <div className="container mx-auto px-4">
+          <div className="text-center mb-12">
+            <h2 className="heading-2">Por Que Educadores Confiam na Jane</h2>
+            <p className="text-body mt-4 max-w-2xl mx-auto">
+              Comprometimento com excelência educacional e resultados comprovados
             </p>
           </div>
           
-          <div className="text-center space-y-4">
-            <div className="w-16 h-16 bg-purple-100 rounded-2xl flex items-center justify-center mx-auto">
-              <Users className="w-8 h-8 text-purple-600" />
-            </div>
-            <h3 className="heading-3">Aprovação dos Educadores</h3>
-            <p className="text-body">
-              Mais de 2000 professores utilizam nossos recursos com excelentes resultados.
-            </p>
-          </div>
-          
-          <div className="text-center space-y-4">
-            <div className="w-16 h-16 bg-pink-100 rounded-2xl flex items-center justify-center mx-auto">
-              <Sparkles className="w-8 h-8 text-pink-600" />
-            </div>
-            <h3 className="heading-3">Inovação Constante</h3>
-            <p className="text-body">
-              Novos materiais desenvolvidos regularmente para acompanhar as necessidades educacionais.
-            </p>
+          <div className="grid md:grid-cols-4 gap-8">
+            {[
+              {
+                icon: Award,
+                title: "Expertise Reconhecida",
+                description: "Formação em Pedagogia, Educação Especial e Psicopedagogia"
+              },
+              {
+                icon: Users,
+                title: "Comunidade Ativa",
+                description: "Mais de 2000 educadores utilizando nossos recursos"
+              },
+              {
+                icon: TrendingUp,
+                title: "Resultados Comprovados",
+                description: "98% de satisfação e melhoria no aprendizado"
+              },
+              {
+                icon: Shield,
+                title: "Qualidade Garantida",
+                description: "Materiais desenvolvidos com base científica"
+              }
+            ].map((item, index) => (
+              <div key={index} className="text-center space-y-4 group">
+                <div className="w-16 h-16 bg-gradient-to-br from-slate-100 to-slate-200 rounded-2xl flex items-center justify-center mx-auto group-hover:scale-110 transition-transform duration-300">
+                  <item.icon className="w-8 h-8 text-slate-700" />
+                </div>
+                <h3 className="font-semibold text-slate-900">{item.title}</h3>
+                <p className="text-sm text-slate-600 leading-relaxed">{item.description}</p>
+              </div>
+            ))}
           </div>
         </div>
       </section>
 
-      {/* New Products */}
-      <section className="space-y-8">
-        <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
-          <div>
-            <h2 className="heading-2">Lançamentos</h2>
-            <p className="text-body mt-2">Novos recursos para enriquecer suas aulas</p>
-          </div>
-          <Link 
-            href="/produtos?filter=new" 
-            className="inline-flex items-center text-indigo-600 hover:text-indigo-700 font-medium transition-colors"
-          >
-            Ver todos os lançamentos
-            <ArrowRight className="w-4 h-4 ml-1" />
-          </Link>
-        </div>
-        
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-          {newProducts.map((product, index) => (
-            <div key={product.id} className="animate-fade-in" style={{ animationDelay: `${index * 100}ms` }}>
-              <ProductCard product={product} />
+      {/* Featured Products - Premium */}
+      <section className="py-16 bg-slate-50">
+        <div className="container mx-auto px-4">
+          <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-8 mb-12">
+            <div>
+              <h2 className="heading-2">Recursos Premium</h2>
+              <p className="text-body mt-4 max-w-lg">
+                Materiais mais populares entre educadores que buscam excelência em sala de aula
+              </p>
             </div>
-          ))}
-        </div>
-      </section>
-
-      {/* CTA Section */}
-      <section className="bg-gradient-to-r from-indigo-600 to-purple-600 text-white rounded-3xl p-8 lg:p-16 text-center">
-        <div className="max-w-3xl mx-auto space-y-8">
-          <h2 className="heading-2 text-white">Clubinho Jane</h2>
-          <p className="text-xl text-white/90">
-            Acesso ilimitado a todos os recursos pedagógicos por apenas R$ 29,90/mês
-          </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Link 
-              href="/assinatura" 
-              className="inline-flex items-center justify-center bg-white text-indigo-600 px-8 py-4 rounded-xl font-semibold hover:bg-gray-50 transition-colors"
-            >
-              Assinar Agora
-              <ArrowRight className="w-5 h-5 ml-2" />
-            </Link>
             <Link 
               href="/produtos" 
-              className="inline-flex items-center justify-center bg-white/20 backdrop-blur-sm text-white px-8 py-4 rounded-xl font-semibold hover:bg-white/30 transition-colors border border-white/30"
+              className="inline-flex items-center space-x-2 px-6 py-3 bg-white border border-slate-200 rounded-xl hover:bg-slate-50 transition-colors shadow-sm"
             >
-              Conhecer Planos
+              <span className="font-semibold text-slate-700">Ver Catálogo Completo</span>
+              <ArrowRight className="w-5 h-5 text-slate-600" />
             </Link>
+          </div>
+          
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+            {featuredProducts.map((product, index) => (
+              <div key={product.id} className="animate-fade-in" style={{ animationDelay: `${index * 100}ms` }}>
+                <ProductCard product={product} />
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Testimonials - Premium */}
+      <section className="py-16 bg-white">
+        <div className="container mx-auto px-4">
+          <div className="text-center mb-16">
+            <h2 className="heading-2">O Que Educadores Dizem</h2>
+            <p className="text-body mt-4 max-w-2xl mx-auto">
+              Depoimentos de profissionais que transformaram sua prática com nossos recursos
+            </p>
+          </div>
+          
+          <div className="grid md:grid-cols-3 gap-8">
+            {testimonials.map((testimonial, index) => (
+              <div key={index} className="card p-8 space-y-6">
+                <div className="flex items-center space-x-1">
+                  {[...Array(testimonial.rating)].map((_, i) => (
+                    <Star key={i} className="w-5 h-5 text-amber-400 fill-current" />
+                  ))}
+                </div>
+                
+                <p className="text-body italic">"{testimonial.content}"</p>
+                
+                <div className="flex items-center space-x-4">
+                  <div className="w-12 h-12 bg-gradient-to-br from-blue-500 to-indigo-600 rounded-full flex items-center justify-center text-white font-bold">
+                    {testimonial.avatar}
+                  </div>
+                  <div>
+                    <p className="font-semibold text-slate-900">{testimonial.name}</p>
+                    <p className="text-sm text-slate-600">{testimonial.role}</p>
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* CTA Section - Premium */}
+      <section className="py-20 bg-gradient-to-br from-slate-900 to-slate-800 text-white relative overflow-hidden">
+        <div className="container mx-auto px-4 relative">
+          <div className="max-w-4xl mx-auto text-center space-y-8">
+            <div className="space-y-4">
+              <h2 className="heading-2 text-white">Clubinho Jane Premium</h2>
+              <p className="text-xl text-slate-300 leading-relaxed">
+                Acesso ilimitado a todos os recursos pedagógicos premium com atualizações mensais
+              </p>
+            </div>
+            
+            <div className="grid md:grid-cols-3 gap-8 py-12">
+              {[
+                "Acesso a 50+ Recursos Premium",
+                "Novos Materiais Todo Mês",
+                "Suporte Especializado"
+              ].map((feature, index) => (
+                <div key={index} className="flex items-center space-x-3">
+                  <CheckCircle className="w-6 h-6 text-green-400" />
+                  <span className="text-slate-200">{feature}</span>
+                </div>
+              ))}
+            </div>
+            
+            <div className="flex flex-col sm:flex-row gap-6 justify-center items-center">
+              <div className="text-center">
+                <p className="text-4xl font-bold text-white mb-2">R$ 29,90</p>
+                <p className="text-slate-400 mb-6">por mês</p>
+                <Link 
+                  href="/assinatura" 
+                  className="btn-primary bg-white text-slate-900 hover:bg-slate-100"
+                >
+                  Assinar Agora
+                  <ArrowRight className="w-5 h-5" />
+                </Link>
+              </div>
+              
+              <div className="text-center">
+                <p className="text-2xl font-semibold text-slate-300 mb-2">R$ 299,90</p>
+                <p className="text-slate-400 mb-6">ano (economize 2 meses)</p>
+                <Link 
+                  href="/assinatura?plan=annual" 
+                  className="btn-secondary border-slate-600 text-slate-200 hover:bg-slate-700"
+                >
+                  Plano Anual
+                  <ArrowRight className="w-5 h-5" />
+                </Link>
+              </div>
+            </div>
+            
+            <p className="text-sm text-slate-400 mt-8">
+              Cancelamento a qualquer momento. Garantia de 7 dias.
+            </p>
           </div>
         </div>
       </section>
