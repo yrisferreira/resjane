@@ -22,70 +22,58 @@
     <style>
         /* ===== CORES E DESIGN SISTEMA ===== */
         :root {
-            /* Paleta Branco e Rosa Bebe */
-            --primary-pink: #F9A8D4;
-            --primary-pink-dark: #F472B6;
-            --primary-pink-light: #FBCFE8;
+            /* Paleta Eureka Recursos - Cores Vibrantes e Profissionais */
+            --primary-purple: #6B46C1;
+            --primary-purple-dark: #553C9A;
+            --primary-purple-light: #9333EA;
             
-            --secondary-rose: #FCA5A5;
-            --secondary-rose-dark: #F87171;
-            --secondary-rose-light: #FECACA;
+            --secondary-pink: #EC4899;
+            --secondary-pink-dark: #DB2777;
+            --secondary-pink-light: #F472B6;
             
-            --accent-baby-pink: #FDF2F8;
-            --accent-baby-pink-dark: #FCE7F3;
-            --accent-baby-pink-light: #FEF7F0;
+            --accent-orange: #F97316;
+            --accent-orange-dark: #EA580C;
+            --accent-orange-light: #FB923C;
+            
+            --accent-blue: #3B82F6;
+            --accent-blue-dark: #2563EB;
+            --accent-blue-light: #60A5FA;
+            
+            --accent-green: #10B981;
+            --accent-green-dark: #059669;
+            --accent-green-light: #34D399;
             
             --neutral-white: #FFFFFF;
-            --neutral-50: #FFFAF5;
-            --neutral-100: #FFF7ED;
-            --neutral-200: #FED7AA;
-            --neutral-300: #FDBA74;
-            --neutral-400: #FB923C;
-            --neutral-500: #F97316;
-            --neutral-600: #EA580C;
-            --neutral-700: #C2410C;
-            --neutral-800: #9A3412;
-            --neutral-900: #7C2D12;
+            --neutral-50: #F9FAFB;
+            --neutral-100: #F3F4F6;
+            --neutral-200: #E5E7EB;
+            --neutral-300: #D1D5DB;
+            --neutral-400: #9CA3AF;
+            --neutral-500: #6B7280;
+            --neutral-600: #4B5563;
+            --neutral-700: #374151;
+            --neutral-800: #1F2937;
+            --neutral-900: #111827;
             
-            --text-primary: #7C2D12;
-            --text-secondary: #9A3412;
-            --text-tertiary: #C2410C;
-            --text-light: #EA580C;
-
-            /* Aliases usados no restante do layout */
-            --text-dark: var(--text-primary);
-            --text-medium: var(--text-secondary);
-
-            /* Cores auxiliares (legado do layout anterior) */
-            --primary-orange: var(--primary-pink);
-            --primary-orange-dark: var(--primary-pink-dark);
-            --primary-orange-light: var(--primary-pink-light);
-            --secondary-green: #10B981;
-            --primary-blue: #60A5FA;
-            --secondary-purple: #A78BFA;
-            --accent-coral: #FB7185;
-            --accent-mint: #34D399;
+            --text-primary: #1F2937;
+            --text-secondary: #4B5563;
+            --text-tertiary: #6B7280;
+            --text-light: #9CA3AF;
             
             --white: #FFFFFF;
             --black: #000000;
             
-            --shadow-sm: 0 1px 2px 0 rgba(249, 168, 212, 0.05);
-            --shadow-md: 0 4px 6px -1px rgba(249, 168, 212, 0.1), 0 2px 4px -1px rgba(249, 168, 212, 0.06);
-            --shadow-lg: 0 10px 15px -3px rgba(249, 168, 212, 0.1), 0 4px 6px -2px rgba(249, 168, 212, 0.05);
-            --shadow-xl: 0 20px 25px -5px rgba(249, 168, 212, 0.1), 0 10px 10px -5px rgba(249, 168, 212, 0.04);
-            --shadow-pink: 0 10px 20px rgba(249, 168, 212, 0.15);
-            --shadow-soft: var(--shadow-sm);
-            --shadow-medium: var(--shadow-md);
-            --shadow-large: var(--shadow-lg);
+            --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+            --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+            --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+            --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+            --shadow-purple: 0 10px 20px rgba(107, 70, 193, 0.15);
             
-            --border-light: var(--accent-baby-pink);
-            --neutral-cream-light: var(--neutral-50);
-            
-            --border-radius-sm: 6px;
-            --border-radius-md: 8px;
-            --border-radius-lg: 12px;
-            --border-radius-xl: 16px;
-            --border-radius-2xl: 20px;
+            --border-radius-sm: 4px;
+            --border-radius-md: 6px;
+            --border-radius-lg: 8px;
+            --border-radius-xl: 12px;
+            --border-radius-2xl: 16px;
             
             --font-size-xs: 0.75rem;
             --font-size-sm: 0.875rem;
@@ -108,10 +96,10 @@
             --transition-normal: 0.3s ease;
             --transition-slow: 0.5s ease;
             
-            --success-green: #86EFAC;
-            --warning-yellow: #FDE047;
-            --error-red: #FCA5A5;
-            --info-blue: #93C5FD;
+            --success-green: #10B981;
+            --warning-yellow: #F59E0B;
+            --error-red: #EF4444;
+            --info-blue: #3B82F6;
         }
 
         /* ===== TIPOGRAFIA ===== */
@@ -126,7 +114,7 @@
             font-size: 16px;
             line-height: 1.6;
             color: var(--text-secondary);
-            background-color: var(--neutral-white);
+            background-color: var(--neutral-50);
             overflow-x: hidden;
         }
 
