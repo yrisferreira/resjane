@@ -1,7 +1,7 @@
 'use client';
 
 import Link from 'next/link';
-import { ShoppingCart, User, Search, Menu, X } from 'lucide-react';
+import { ShoppingCart, User, Search, Menu, X, Shield, Star, Phone } from 'lucide-react';
 import { useState } from 'react';
 import { useCart } from '@/hooks/useCart';
 
@@ -13,72 +13,101 @@ export default function Header() {
   const cartItemsCount = getTotalItems();
 
   return (
-    <header className="bg-white/80 backdrop-blur-lg border-b border-neutral-200 sticky top-0 z-50">
+    <header className="bg-white/95 backdrop-blur-xl border-b border-slate-200 sticky top-0 z-50 shadow-sm">
       <div className="container mx-auto px-4">
-        <div className="flex items-center justify-between h-16">
-          {/* Logo */}
-          <Link href="/" className="flex items-center space-x-2 group">
-            <div className="w-10 h-10 bg-gradient-to-br from-indigo-500 to-purple-600 rounded-xl flex items-center justify-center group-hover:scale-105 transition-transform">
-              <span className="text-white font-bold text-lg">J</span>
+        <div className="flex items-center justify-between h-20">
+          {/* Logo - Premium */}
+          <Link href="/" className="flex items-center space-x-3 group">
+            <div className="relative">
+              <div className="w-12 h-12 bg-gradient-to-br from-blue-600 to-indigo-700 rounded-xl flex items-center justify-center group-hover:scale-105 transition-all duration-300 shadow-lg">
+                <div className="w-6 h-6 bg-white/20 backdrop-blur-sm rounded-lg flex items-center justify-center">
+                  <span className="text-white font-bold text-lg">J</span>
+                </div>
+              </div>
+              {/* Glow Effect */}
+              <div className="absolute inset-0 bg-blue-400/20 rounded-xl blur-xl group-hover:scale-110 transition-transform duration-300"></div>
             </div>
             <div className="hidden sm:block">
-              <h1 className="text-xl font-bold text-neutral-900">Jane</h1>
-              <p className="text-xs text-neutral-500">Recursos Pedagógicos</p>
+              <h1 className="text-xl font-bold text-slate-900 group-hover:text-blue-600 transition-colors">Jane Recursos</h1>
+              <p className="text-xs text-slate-500 font-medium">Pedagógicos Premium</p>
             </div>
           </Link>
 
-          {/* Desktop Navigation */}
-          <nav className="hidden lg:flex items-center space-x-8">
+          {/* Desktop Navigation - Corporate */}
+          <nav className="hidden xl:flex items-center space-x-8">
             <Link 
               href="/" 
-              className="text-sm font-medium text-neutral-600 hover:text-neutral-900 transition-colors"
+              className="text-sm font-medium text-slate-600 hover:text-blue-600 transition-colors relative group"
             >
               Início
+              <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-blue-600 group-hover:w-full transition-all duration-300"></span>
             </Link>
             <Link 
               href="/produtos" 
-              className="text-sm font-medium text-neutral-600 hover:text-neutral-900 transition-colors"
+              className="text-sm font-medium text-slate-600 hover:text-blue-600 transition-colors relative group"
             >
-              Produtos
+              Catálogo
+              <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-blue-600 group-hover:w-full transition-all duration-300"></span>
             </Link>
             <Link 
               href="/sobre" 
-              className="text-sm font-medium text-neutral-600 hover:text-neutral-900 transition-colors"
+              className="text-sm font-medium text-slate-600 hover:text-blue-600 transition-colors relative group"
             >
               Sobre
+              <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-blue-600 group-hover:w-full transition-all duration-300"></span>
+            </Link>
+            <Link 
+              href="/assinatura" 
+              className="text-sm font-medium text-slate-600 hover:text-blue-600 transition-colors relative group"
+            >
+              Clubinho
+              <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-blue-600 group-hover:w-full transition-all duration-300"></span>
             </Link>
             <Link 
               href="/contato" 
-              className="text-sm font-medium text-neutral-600 hover:text-neutral-900 transition-colors"
+              className="text-sm font-medium text-slate-600 hover:text-blue-600 transition-colors relative group"
             >
               Contato
+              <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-blue-600 group-hover:w-full transition-all duration-300"></span>
             </Link>
           </nav>
 
-          {/* Search Bar - Desktop */}
-          <div className="hidden md:flex items-center flex-1 max-w-md mx-8">
-            <div className="relative w-full">
-              <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-neutral-400 w-4 h-4" />
+          {/* Search Bar - Desktop Premium */}
+          <div className="hidden lg:flex items-center flex-1 max-w-md mx-8">
+            <div className="relative w-full group">
+              <Search className="absolute left-4 top-1/2 transform -translate-y-1/2 text-slate-400 w-4 h-4 group-focus-within:text-blue-600 transition-colors" />
               <input
                 type="text"
-                placeholder="Buscar recursos..."
+                placeholder="Buscar recursos premium..."
                 value={searchQuery}
                 onChange={(e) => setSearchQuery(e.target.value)}
-                className="w-full pl-10 pr-4 py-2 bg-neutral-50 border border-neutral-200 rounded-xl text-sm focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent transition-all"
+                className="w-full pl-12 pr-4 py-3 bg-slate-50 border border-slate-200 rounded-xl text-sm focus:outline-none focus:ring-2 focus:ring-blue-600 focus:border-transparent focus:bg-white transition-all duration-300 shadow-sm"
               />
+              {/* Search Results Dropdown */}
+              {searchQuery && (
+                <div className="absolute top-full left-0 right-0 mt-2 bg-white border border-slate-200 rounded-xl shadow-xl p-4 z-50">
+                  <p className="text-sm text-slate-500">Digite para buscar recursos...</p>
+                </div>
+              )}
             </div>
           </div>
 
-          {/* Actions */}
-          <div className="flex items-center space-x-2">
+          {/* Actions - Premium */}
+          <div className="flex items-center space-x-3">
+            {/* Trust Badge */}
+            <div className="hidden md:flex items-center space-x-2 px-3 py-2 bg-green-50 border border-green-200 rounded-xl">
+              <Shield className="w-4 h-4 text-green-600" />
+              <span className="text-xs font-medium text-green-700">Premium</span>
+            </div>
+
             {/* Cart */}
             <Link 
               href="/carrinho" 
-              className="relative p-2 text-neutral-600 hover:text-neutral-900 hover:bg-neutral-100 rounded-xl transition-all"
+              className="relative p-3 text-slate-600 hover:text-blue-600 hover:bg-blue-50 rounded-xl transition-all duration-300 group"
             >
-              <ShoppingCart className="w-5 h-5" />
+              <ShoppingCart className="w-5 h-5 group-hover:scale-110 transition-transform" />
               {cartItemsCount > 0 && (
-                <span className="absolute -top-1 -right-1 bg-indigo-600 text-white text-xs rounded-full w-5 h-5 flex items-center justify-center font-medium">
+                <span className="absolute -top-1 -right-1 bg-gradient-to-r from-blue-600 to-indigo-600 text-white text-xs rounded-full w-5 h-5 flex items-center justify-center font-medium shadow-lg animate-pulse">
                   {cartItemsCount}
                 </span>
               )}
@@ -87,66 +116,118 @@ export default function Header() {
             {/* User Account */}
             <Link 
               href="/login" 
-              className="hidden sm:flex items-center space-x-2 px-3 py-2 text-neutral-600 hover:text-neutral-900 hover:bg-neutral-100 rounded-xl transition-all"
+              className="hidden sm:flex items-center space-x-2 px-4 py-3 text-slate-600 hover:text-blue-600 hover:bg-blue-50 rounded-xl transition-all duration-300 group"
             >
-              <User className="w-5 h-5" />
-              <span className="text-sm font-medium">Entrar</span>
+              <User className="w-5 h-5 group-hover:scale-110 transition-transform" />
+              <span className="text-sm font-medium">Área do Aluno</span>
+            </Link>
+
+            {/* CTA Button */}
+            <Link 
+              href="/assinatura" 
+              className="hidden md:inline-flex items-center px-4 py-3 bg-gradient-to-r from-blue-600 to-indigo-600 text-white rounded-xl hover:from-blue-700 hover:to-indigo-700 transition-all duration-300 shadow-md hover:shadow-lg group"
+            >
+              <span className="text-sm font-semibold">Assinar</span>
+              <Star className="w-4 h-4 ml-1 group-hover:rotate-12 transition-transform" />
             </Link>
 
             {/* Mobile Menu Toggle */}
             <button
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-              className="lg:hidden p-2 text-neutral-600 hover:text-neutral-900 hover:bg-neutral-100 rounded-xl transition-all"
+              className="xl:hidden p-3 text-slate-600 hover:text-blue-600 hover:bg-blue-50 rounded-xl transition-all duration-300"
             >
               {isMobileMenuOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
             </button>
           </div>
         </div>
 
-        {/* Mobile Menu */}
+        {/* Mobile Menu - Premium */}
         {isMobileMenuOpen && (
-          <div className="lg:hidden border-t border-neutral-200 animate-slide-up">
-            <div className="py-4 space-y-1">
+          <div className="xl:hidden border-t border-slate-200 bg-white animate-slide-up">
+            <div className="py-6 space-y-2">
+              <div className="px-4 pb-4 border-b border-slate-100">
+                <div className="flex items-center space-x-2 text-sm text-slate-500">
+                  <Shield className="w-4 h-4 text-green-600" />
+                  <span>Plataforma Premium</span>
+                </div>
+              </div>
+              
               <Link 
                 href="/" 
-                className="block px-4 py-2 text-sm font-medium text-neutral-600 hover:text-neutral-900 hover:bg-neutral-100 rounded-xl transition-all"
+                className="block px-4 py-3 text-sm font-medium text-slate-600 hover:text-blue-600 hover:bg-blue-50 rounded-xl transition-all mx-2"
                 onClick={() => setIsMobileMenuOpen(false)}
               >
                 Início
               </Link>
               <Link 
                 href="/produtos" 
-                className="block px-4 py-2 text-sm font-medium text-neutral-600 hover:text-neutral-900 hover:bg-neutral-100 rounded-xl transition-all"
+                className="block px-4 py-3 text-sm font-medium text-slate-600 hover:text-blue-600 hover:bg-blue-50 rounded-xl transition-all mx-2"
                 onClick={() => setIsMobileMenuOpen(false)}
               >
-                Produtos
+                Catálogo de Produtos
               </Link>
               <Link 
                 href="/sobre" 
-                className="block px-4 py-2 text-sm font-medium text-neutral-600 hover:text-neutral-900 hover:bg-neutral-100 rounded-xl transition-all"
+                className="block px-4 py-3 text-sm font-medium text-slate-600 hover:text-blue-600 hover:bg-blue-50 rounded-xl transition-all mx-2"
                 onClick={() => setIsMobileMenuOpen(false)}
               >
-                Sobre
+                Sobre a Jane
+              </Link>
+              <Link 
+                href="/assinatura" 
+                className="block px-4 py-3 text-sm font-medium text-slate-600 hover:text-blue-600 hover:bg-blue-50 rounded-xl transition-all mx-2"
+                onClick={() => setIsMobileMenuOpen(false)}
+              >
+                Clubinho Premium
               </Link>
               <Link 
                 href="/contato" 
-                className="block px-4 py-2 text-sm font-medium text-neutral-600 hover:text-neutral-900 hover:bg-neutral-100 rounded-xl transition-all"
+                className="block px-4 py-3 text-sm font-medium text-slate-600 hover:text-blue-600 hover:bg-blue-50 rounded-xl transition-all mx-2"
                 onClick={() => setIsMobileMenuOpen(false)}
               >
-                Contato
+                Contato e Suporte
               </Link>
               
               {/* Mobile Search */}
-              <div className="px-4 pt-4">
+              <div className="px-4 pt-4 border-t border-slate-100">
                 <div className="relative">
-                  <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-neutral-400 w-4 h-4" />
+                  <Search className="absolute left-4 top-1/2 transform -translate-y-1/2 text-slate-400 w-4 h-4" />
                   <input
                     type="text"
                     placeholder="Buscar recursos..."
                     value={searchQuery}
                     onChange={(e) => setSearchQuery(e.target.value)}
-                    className="w-full pl-10 pr-4 py-2 bg-neutral-50 border border-neutral-200 rounded-xl text-sm focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent transition-all"
+                    className="w-full pl-12 pr-4 py-3 bg-slate-50 border border-slate-200 rounded-xl text-sm focus:outline-none focus:ring-2 focus:ring-blue-600 focus:border-transparent transition-all"
                   />
+                </div>
+              </div>
+
+              {/* Mobile Actions */}
+              <div className="px-4 pt-4 border-t border-slate-100 space-y-3">
+                <Link 
+                  href="/login" 
+                  className="flex items-center justify-center space-x-2 w-full px-4 py-3 text-slate-600 hover:text-blue-600 hover:bg-blue-50 rounded-xl transition-all"
+                  onClick={() => setIsMobileMenuOpen(false)}
+                >
+                  <User className="w-5 h-5" />
+                  <span className="text-sm font-medium">Área do Aluno</span>
+                </Link>
+                
+                <Link 
+                  href="/assinatura" 
+                  className="flex items-center justify-center space-x-2 w-full px-4 py-3 bg-gradient-to-r from-blue-600 to-indigo-600 text-white rounded-xl hover:from-blue-700 hover:to-indigo-700 transition-all shadow-md"
+                  onClick={() => setIsMobileMenuOpen(false)}
+                >
+                  <Star className="w-4 h-4" />
+                  <span className="text-sm font-semibold">Assinar Agora</span>
+                </Link>
+              </div>
+
+              {/* Mobile Contact */}
+              <div className="px-4 pt-4 border-t border-slate-100">
+                <div className="flex items-center justify-center space-x-2 text-sm text-slate-500">
+                  <Phone className="w-4 h-4" />
+                  <span>Suporte: (11) 98765-4321</span>
                 </div>
               </div>
             </div>
