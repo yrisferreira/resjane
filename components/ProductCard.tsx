@@ -86,11 +86,18 @@ export default function ProductCard({ product }: ProductCardProps) {
                 {[...Array(5)].map((_, i) => (
                   <Star 
                     key={i} 
-                    className={`w-3 h-3 ${i < 4 ? 'text-amber-400 fill-current' : 'text-slate-300'}`} 
+                    className={`w-3 h-3 ${i < Math.floor(product.rating || 4.9) ? 'text-amber-400 fill-current' : 'text-slate-300'}`} 
                   />
                 ))}
               </div>
-              <span className="text-xs text-slate-500 font-medium">(4.9)</span>
+              <span className="text-xs text-slate-500 font-medium">
+                ({product.rating || 4.9})
+              </span>
+              {product.reviews && (
+                <span className="text-xs text-slate-400">
+                  ({product.reviews} avaliações)
+                </span>
+              )}
             </div>
             
             <div className="flex items-center text-xs text-slate-500">

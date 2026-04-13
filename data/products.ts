@@ -8,6 +8,8 @@ export const products: Product[] = [
     featured: true,
     new: true,
     category: 'Painéis',
+    rating: 4.8,
+    reviews: 127,
   },
   {
     id: '2',
@@ -16,6 +18,8 @@ export const products: Product[] = [
     featured: true,
     new: true,
     category: 'Atividades',
+    rating: 4.9,
+    reviews: 89,
   },
   {
     id: '3',
@@ -24,6 +28,8 @@ export const products: Product[] = [
     featured: true,
     new: true,
     category: 'Painéis',
+    rating: 4.7,
+    reviews: 156,
   },
   {
     id: '4',
@@ -31,6 +37,8 @@ export const products: Product[] = [
     price: 6.50,
     featured: true,
     category: 'Kits',
+    rating: 5.0,
+    reviews: 203,
   },
   {
     id: '5',
@@ -38,6 +46,8 @@ export const products: Product[] = [
     price: 10.00,
     featured: true,
     category: 'Kits',
+    rating: 4.6,
+    reviews: 94,
   },
   {
     id: '6',
@@ -45,6 +55,8 @@ export const products: Product[] = [
     price: 6.00,
     featured: true,
     category: 'Kits',
+    rating: 4.5,
+    reviews: 67,
   },
   {
     id: '7',
@@ -52,6 +64,8 @@ export const products: Product[] = [
     price: 7.00,
     featured: true,
     category: 'Calendários',
+    rating: 4.4,
+    reviews: 78,
   },
   {
     id: '8',
@@ -59,6 +73,8 @@ export const products: Product[] = [
     price: 6.50,
     featured: true,
     category: 'Atividades',
+    rating: 4.8,
+    reviews: 112,
   },
   {
     id: '9',
@@ -66,6 +82,8 @@ export const products: Product[] = [
     price: 8.50,
     featured: true,
     category: 'Painéis',
+    rating: 4.9,
+    reviews: 145,
   },
   {
     id: '10',
@@ -73,6 +91,8 @@ export const products: Product[] = [
     price: 7.50,
     featured: true,
     category: 'Cartazes',
+    rating: 4.3,
+    reviews: 56,
   },
   {
     id: '11',
@@ -80,6 +100,8 @@ export const products: Product[] = [
     price: 7.50,
     new: true,
     category: 'Kits',
+    rating: 4.7,
+    reviews: 89,
   },
   {
     id: '12',
@@ -87,6 +109,8 @@ export const products: Product[] = [
     price: 7.50,
     new: true,
     category: 'Kits',
+    rating: 4.6,
+    reviews: 103,
   },
   {
     id: '13',
@@ -94,6 +118,8 @@ export const products: Product[] = [
     price: 11.00,
     new: true,
     category: 'Kits',
+    rating: 5.0,
+    reviews: 178,
   },
   {
     id: '14',
@@ -101,6 +127,8 @@ export const products: Product[] = [
     price: 6.50,
     new: true,
     category: 'Cartazes',
+    rating: 4.2,
+    reviews: 45,
   },
   {
     id: '15',
@@ -108,6 +136,8 @@ export const products: Product[] = [
     price: 4.50,
     new: true,
     category: 'Recursos',
+    rating: 4.5,
+    reviews: 67,
   },
   {
     id: '16',
@@ -115,6 +145,8 @@ export const products: Product[] = [
     price: 4.50,
     new: true,
     category: 'Recursos',
+    rating: 4.4,
+    reviews: 38,
   },
   {
     id: '17',
@@ -122,6 +154,8 @@ export const products: Product[] = [
     price: 7.50,
     new: true,
     category: 'Painéis',
+    rating: 4.8,
+    reviews: 134,
   },
   {
     id: '18',
@@ -129,18 +163,24 @@ export const products: Product[] = [
     price: 5.50,
     new: true,
     category: 'Atividades',
+    rating: 4.7,
+    reviews: 92,
   },
   {
     id: '19',
-    name: 'Kit Capas e Sacolas de Natal – Coloridas e Para Colorir',
+    name: 'Kit Capas e Sacolas de Natal - Coloridas e Para Colorir',
     price: 5.50,
     new: true,
     category: 'Kits',
+    rating: 4.6,
+    reviews: 81,
   },
   {
     id: '20',
     name: 'PAINEL GOOGLE MELHORES MOMENTOS DA TURMA',
     price: 7.50,
     category: 'Painéis',
+    rating: 4.9,
+    reviews: 167,
   },
 ];

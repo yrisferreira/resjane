@@ -31,11 +31,15 @@ export default function Home() {
     }
   ];
 
+  // Calcular média real das avaliações
+  const averageRating = (products.reduce((sum, product) => sum + (product.rating || 0), 0) / products.length).toFixed(1);
+  const totalReviews = products.reduce((sum, product) => sum + (product.reviews || 0), 0);
+
   const stats = [
     { value: "2000+", label: "Educadores Ativos", icon: Users },
     { value: "50+", label: "Recursos Premium", icon: BookOpen },
-    { value: "4.9/5", label: "Avaliação Média", icon: Star },
-    { value: "98%", label: "Satisfação", icon: TrendingUp }
+    { value: `${averageRating}/5`, label: "Avaliação Média", icon: Star },
+    { value: `${totalReviews}+`, label: "Avaliações", icon: TrendingUp }
   ];
 
   return (
@@ -119,9 +123,9 @@ export default function Home() {
                     <p className="text-slate-600 font-medium">Pedagoga Especialista</p>
                     <div className="flex items-center justify-center space-x-1">
                       {[...Array(5)].map((_, i) => (
-                        <Star key={i} className="w-4 h-4 text-amber-400 fill-current" />
+                        <Star key={i} className={`w-4 h-4 ${i < Math.floor(Number(averageRating)) ? 'text-amber-400 fill-current' : 'text-slate-300'}`} />
                       ))}
-                      <span className="text-sm text-slate-600 ml-2">4.9/5</span>
+                      <span className="text-sm text-slate-600 ml-2">{averageRating}/5</span>
                     </div>
                   </div>
                   
