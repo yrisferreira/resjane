@@ -95,17 +95,7 @@ export default function ContatoPage() {
                 </div>
               </div>
 
-              <div className="flex items-start space-x-4">
-                <div className="bg-purple-100 rounded-lg p-3">
-                  <Phone className="w-6 h-6 text-purple-600" />
-                </div>
-                <div>
-                  <h3 className="font-semibold text-gray-800 mb-1">Telefone</h3>
-                  <p className="text-gray-600">(11) 3456-7890</p>
-                  <p className="text-sm text-gray-500">Seg-Sex, 9h-17h</p>
-                </div>
-              </div>
-            </div>
+                          </div>
 
             {/* Redes Sociais */}
             <div className="bg-gradient-to-r from-pink-500 via-purple-500 to-primary-600 text-white rounded-lg p-6">
@@ -119,9 +109,6 @@ export default function ContatoPage() {
                 </a>
                 <a href="#" className="bg-white/20 backdrop-blur-sm px-4 py-2 rounded-lg hover:bg-white/30 transition">
                   Facebook
-                </a>
-                <a href="#" className="bg-white/20 backdrop-blur-sm px-4 py-2 rounded-lg hover:bg-white/30 transition">
-                  YouTube
                 </a>
               </div>
             </div>

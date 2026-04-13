@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import { Instagram, Youtube, Facebook, Mail, Phone, MapPin, BookOpen, Users, Shield, Award } from 'lucide-react';
+import { Instagram, Facebook, Mail, Phone, MapPin, BookOpen, Users, Shield, Award } from 'lucide-react';
 
 export default function Footer() {
   return (
@@ -26,9 +26,6 @@ export default function Footer() {
             <div className="flex items-center space-x-4">
               <a href="https://www.instagram.com/jane.psicoeducar/" target="_blank" rel="noopener noreferrer" className="w-10 h-10 bg-slate-700 rounded-lg flex items-center justify-center hover:bg-pink-600 transition-colors">
                 <Instagram className="w-5 h-5" />
-              </a>
-              <a href="#" className="w-10 h-10 bg-slate-700 rounded-lg flex items-center justify-center hover:bg-slate-600 transition-colors">
-                <Youtube className="w-5 h-5" />
               </a>
               <a href="#" className="w-10 h-10 bg-slate-700 rounded-lg flex items-center justify-center hover:bg-slate-600 transition-colors">
                 <Facebook className="w-5 h-5" />
