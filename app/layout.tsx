@@ -51,7 +51,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="pt-BR" className={`${inter.variable} scroll-smooth`}>
-      <body className={`${inter.className} bg-surface text-neutral-900 antialiased`}>
+      <body className={`${inter.className} bg-white text-slate-900 antialiased`}>
         <div className="min-h-screen flex flex-col">
           <Header />
           <main className="flex-1 animate-fade-in">
