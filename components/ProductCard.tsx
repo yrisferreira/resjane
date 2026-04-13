@@ -1,12 +1,21 @@
+'use client';
+
 import Link from 'next/link';
 import { Product } from '@/types/product';
 import { ShoppingCart } from 'lucide-react';
+import { useCart } from '@/hooks/useCart';
 
 interface ProductCardProps {
   product: Product;
 }
 
 export default function ProductCard({ product }: ProductCardProps) {
+  const { addToCart } = useCart();
+
+  const handleAddToCart = () => {
+    addToCart(product);
+  };
+
   return (
     <div className="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-xl transition-shadow">
       <div className="aspect-square bg-gradient-to-br from-pink-100 via-purple-100 to-primary-200 flex items-center justify-center">
@@ -26,7 +35,10 @@ export default function ProductCard({ product }: ProductCardProps) {
           <span className="text-2xl font-bold text-primary-600">
             R$ {product.price.toFixed(2).replace('.', ',')}
           </span>
-          <button className="bg-primary-600 text-white px-4 py-2 rounded-lg hover:bg-primary-700 transition flex items-center space-x-2">
+          <button 
+            onClick={handleAddToCart}
+            className="bg-primary-600 text-white px-4 py-2 rounded-lg hover:bg-primary-700 transition flex items-center space-x-2"
+          >
             <ShoppingCart className="w-4 h-4" />
             <span>Adicionar</span>
           </button>

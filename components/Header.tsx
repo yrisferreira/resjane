@@ -3,9 +3,11 @@
 import Link from 'next/link';
 import { ShoppingCart, User, Search } from 'lucide-react';
 import { useState } from 'react';
+import { useCart } from '@/hooks/useCart';
 
 export default function Header() {
   const [searchQuery, setSearchQuery] = useState('');
+  const { getTotalItems } = useCart();
 
   return (
     <header className="bg-white shadow-md sticky top-0 z-50">
@@ -57,7 +59,7 @@ export default function Header() {
               <ShoppingCart className="w-5 h-5" />
               <span className="hidden md:inline">Carrinho</span>
               <span className="absolute -top-2 -right-2 bg-primary-600 text-white text-xs rounded-full w-5 h-5 flex items-center justify-center">
-                0
+                {getTotalItems()}
               </span>
             </Link>
           </div>
